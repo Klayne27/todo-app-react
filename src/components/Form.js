@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form1({ dispatch }) {
+export default function Form({ dispatch }) {
   const [inputValue, setInputValue] = useState("");
 
   function handleSubmit(e) {

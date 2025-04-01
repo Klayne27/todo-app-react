@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
-import Form1 from "./Form";
-import List1 from "./List";
+import Form from "./Form";
+import List from "./List";
 
 const initialState = {
   todos: [],
@@ -9,7 +9,7 @@ const initialState = {
   editText: "",
 };
 
-function App1() {
+function App() {
   const [state, dispatch] = useReducer(reducer, initialState, () => {
     const localState = localStorage.getItem("todosApp");
     return localState ? JSON.parse(localState) : initialState;
@@ -98,8 +98,8 @@ function App1() {
 
   return (
     <div className="flex flex-col items-center">
-      <Form1 dispatch={dispatch} />
-      <List1
+      <Form dispatch={dispatch} />
+      <List
         filteredTodos={filteredTodos}
         dispatch={dispatch}
         onDeleteItem={handleDeleteItem}
@@ -116,4 +116,4 @@ function App1() {
   );
 }
 
-export default App1;
+export default App;
