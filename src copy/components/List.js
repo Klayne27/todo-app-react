@@ -78,9 +78,9 @@ function List({
                         />{" "}
                         <label
                           htmlFor={`todo-item-${todo.id}`}
-                          className={`${
+                          className={`text-white ${
                             todo.isDone ? "line-through text-gray-400" : ""
-                          } text-lg flex-grow`}
+                          } text-lg flex-grow `}
                         >
                           {todo.name}
                         </label>
@@ -110,7 +110,7 @@ function List({
           )}
         </div>
       ) : (
-        <p>No todos yet. Add some!</p>
+        <p className="text-white">No todos yet. Add some!</p>
       )}
     </>
   );

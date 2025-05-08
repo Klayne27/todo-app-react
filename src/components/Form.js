@@ -17,21 +17,26 @@ export default function Form() {
       isDone: false,
     };
 
-    if (inputValue.toLowerCase() === "batoul")
+    if (inputValue.toLowerCase() === "batoul") {
       dispatch({
         type: "addItem",
         payload: { id: new Date(), name: "Love you, maybe", isDone: false },
-      })
-    else {
+      });
+    } else if (inputValue.toLocaleLowerCase() === "wayne") {
+      dispatch({
+        type: "addItem",
+        payload: { id: new Date(), name: "Your friend forever", isDone: false },
+      });
+    } else {
       dispatch({ type: "addItem", payload: newTodo });
     }
     setInputValue("");
   }
 
   return (
-    <div className="border shadow-md px-12 py-6 mb-4 rounded-xl mt-5">
+    <div className="border shadow-md px-12 py-6 mb-4 rounded-xl mt-5 bg-[#121212]">
       <form onSubmit={handleSubmit}>
-        <p className="mb-5 text-center font-bold text-3xl">My Todo List</p>
+        <p className="mb-5 text-center font-bold text-3xl text-white">My Todo List</p>
         <input
           type="text"
           value={inputValue}

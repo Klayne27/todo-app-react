@@ -18,7 +18,7 @@ function TodoList({ todo }) {
         <label
           htmlFor={`todo-item-${todo.id}`}
           className={`${
-            todo.isDone ? "line-through text-gray-400" : ""
+            todo.isDone ? "line-through text-gray-400" : "text-white"
           } text-lg flex-grow`}
         >
           {todo.name}

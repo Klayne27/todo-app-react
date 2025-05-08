@@ -25,7 +25,7 @@ function List() {
           )}
         </div>
       ) : (
-        <p>No todos yet. Add some!</p>
+        <p className="text-white">No todos yet. Add some!</p>
       )}
     </>
   );
