@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { useTodo } from "./contexts/TodoContext";
 
-export default function Form() {
-  const { dispatch } = useTodo();
-
+export default function Form({ dispatch }) {
   const [inputValue, setInputValue] = useState("");
 
   function handleSubmit(e) {
@@ -16,15 +13,7 @@ export default function Form() {
       name: inputValue,
       isDone: false,
     };
-
-    if (inputValue.toLowerCase() === "batoul")
-      dispatch({
-        type: "addItem",
-        payload: { id: new Date(), name: "Love you, maybe", isDone: false },
-      })
-    else {
-      dispatch({ type: "addItem", payload: newTodo });
-    }
+    dispatch({ type: "addItem", payload: newTodo });
     setInputValue("");
   }
 
